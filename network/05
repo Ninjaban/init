@@ -1,0 +1,1 @@
+nslookup slash16.org | grep Address: | sed -r 's/Address: ([0-9.]+)/\1/' | sed 1d
