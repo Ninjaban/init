@@ -1,0 +1,8 @@
+#!/bin/sh
+
+MODIFIED=$(find /etc/ -mindepth 1 -maxdepth 1 -name "crontab" -mtime -1)
+
+if [ -z $MODIFIED ]
+then
+	cat /etc/crontab | mail -s "/etc/crontab modifié" root
+fi
